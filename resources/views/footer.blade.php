@@ -4,14 +4,14 @@
     <section
       class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
       <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
+      <div style="clear:both" class="me-5 d-none d-lg-block">
         <span>Get connected with us on social networks:</span>
       </div>
       <!-- Left -->
   
       <!-- Right -->
-      <div>
-        <a href="" class="me-4 text-reset">
+    <div>
+      <a href="" class="me-4 text-reset">
           <i class="fab fa-facebook-f"></i>
         </a>
         <a href="" class="me-4 text-reset">
@@ -29,7 +29,7 @@
         <a href="" class="me-4 text-reset">
           <i class="fab fa-github"></i>
         </a>
-      </div>
+    </div>
       <!-- Right -->
     </section>
     <!-- Section: Social media -->

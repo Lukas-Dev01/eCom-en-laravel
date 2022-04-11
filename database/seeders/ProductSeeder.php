@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,42 +15,42 @@ class ProductSeeder extends Seeder
     public function run()
     {
         //
-        Db::table('products')->insert([
-    [
-        'name'=>'CyberPowerPC AMETHYST II',
-        "price"=>"1100",
-        "description"=>"CyberPowerPC AMETHYST II 241V Mid-Tower Gaming Case w/ Side Tempered Glass Swing Door + 3x ARGB Fans (Black)",
-        "category"=>"Computers",
-        "gallery"=>"https://www.cyberpowerpc.com/images/cs/amethystii241v/cs-450-167_400.png"
-    ],
-    [
-        'name'=>'CyberPowerPC ONYXIA III',
-        "price"=>"1450",
-        "description"=>"CyberPowerPC ONYXIA III 243 Mid-Tower Gaming Case w/ Front & Side Tempered Glass NO FAN (White Color)",
-        "category"=>"Computers",
-        "gallery"=>"https://www.cyberpowerpc.com/images/cs/onyxia3/CS-450-162_400.png"
-    ],
-    [
-        'name'=>'CyberPowerPC FURION',
-        "price"=>"2215",
-        "description"=>"CyberPowerPC FURION Mid-Tower Gaming Case w/ front/Top & Both Side Tempered Glass + 6X Dual Light Loop 120mm RGB Fans & Controller",
-        "category"=>"Computers",
-        "gallery"=>"https://www.cyberpowerpc.com/images/cs/cpfurion/cs-450-134_400.png?v2"
-    ],   
-    [
-        'name'=>'NZXT H510',
-        "price"=>"4059",
-        "description"=>"NZXT H510 Mid-Tower Gaming Case w/ Tempered Glass Window panel (Matte White)",
-        "category"=>"Computers",
-        "gallery"=>"https://www.cyberpowerpc.com/images/cs/H510/CS-211-222_400.png"
-    ],
-    [
-        'name'=>'CyberpowerPC Eclipse',
-        "price"=>"2039",
-        "description"=>"CyberpowerPC Eclipse P418R DRGB ATX Mid-Tower High Air Flow Gaming Case + 3x 120mm ARGB Fans (Black Color)",
-        "category"=>"Computers",
-        "gallery"=>"https://www.cyberpowerpc.com/images/cs/p418R/cs-450-158_400.png"
-    ]
+        DB::table('products')->insert([
+            [
+                'name'=>'LG mobile',
+                "price"=>"200",
+                "description"=>"A smartphone with 4gb ram and much more feature",
+                "category"=>"mobile",
+                "gallery"=>"https://www.lg.com/us/images/cell-phones/md07522101/gallery/desktop-01.jpg"
+            ],
+            [
+                'name'=>'Oppo mobile',
+                "price"=>"300",
+                "description"=>"A smartphone with 8gb ram and much more feature",
+                "category"=>"mobile",
+                "gallery"=>"https://assetscdn1.paytm.com/images/catalog/product/M/MO/MOBOPPO-A52-6-GFUTU6297453D3D253C/1592019058170_0..png"
+            ],
+            [
+                'name'=>'Panasonic Tv',
+                "price"=>"400",
+                "description"=>"A smart tv with much more feature",
+                "category"=>"tv",
+                "gallery"=>"https://i.gadgets360cdn.com/products/televisions/large/1548154685_832_panasonic_32-inch-lcd-full-hd-tv-th-l32u20.jpg"
+            ],
+            [
+                'name'=>'Soni Tv',
+                "price"=>"500",
+                "description"=>"A tv with much more feature",
+                "category"=>"tv",
+                "gallery"=>"https://4.imimg.com/data4/PM/KH/MY-34794816/lcd-500x500.png"
+            ],
+            [
+                'name'=>'LG fridge',
+                "price"=>"200",
+                "description"=>"A fridge with much more feature",
+                "category"=>"fridge",
+                "gallery"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTFx-2-wTOcfr5at01ojZWduXEm5cZ-sRYPJA&usqp=CAU"
+             ]
         ]);
     }
 }
