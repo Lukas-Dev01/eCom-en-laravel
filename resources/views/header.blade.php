@@ -1,3 +1,7 @@
+<?php
+use App\Http\Controllers\ProductController;
+$total = ProductController::cartItem();
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Brand</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +21,7 @@
       </form>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
           <form class="d-flex ms-auto order-2">
-          <a href = "#">Cart(0)</a></a></li>
+          <a href = "#">Cart({{$total}})</a></a></li>
         </form>
       </ul>
     </div>

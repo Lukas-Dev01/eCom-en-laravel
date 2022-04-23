@@ -7,15 +7,19 @@
         </div>
         <div class="col-sm-6">
             <a href="/"> Go Back</a>
-            <br>
-            <h2>{{$product['name']}}</h2>  {{-- Clicked on a items name whole screen  --}}
+            <h2>{{$product['name']}}</h2>  {{-- Clicked on a items name = whole screen  --}}
             <h3>Price: {{$product['price']}}</h3> 
             <h4>Details:  {{$product['description']}}</h4>
             <h4>Category: {{$product['category']}}</h4>
             <br><br>
-            <button class="btn btn-primary">Add to Cart</button>
+            <form action="/add_to_cart" method="POST">
+                @csrf
+                <input type="hidden" name ="product_id" value={{$product['id']}}>
+                <button class="btn btn-primary"> Add to Cart</button>
+            </form>
             <br><br>
             <button class="btn btn-success">Buy Now</button>
+            <br><br>
 
         </div>
     </div>
