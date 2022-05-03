@@ -21,6 +21,11 @@ Route::get('/login', function () { // Login Route
 
 Route::post("/login", [UserController::class,'login']);  // Login page #2
 
+Route::get('/logout', function () { // Logout Route
+    Session::forget('user');
+        return redirect('login');
+});
+
 Route::get("/", [ProductController::class,'index']); // The main site?
 
 Route::get("/detail/{id}", [ProductController::class,'detail']);

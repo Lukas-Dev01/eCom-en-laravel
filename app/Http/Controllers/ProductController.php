@@ -43,11 +43,11 @@ class ProductController extends Controller
         else
         {
             return redirect('/login');
-        }
+        } 
     }
     static function cartItem()
     {
-     $userId=Session::get('user')['id'];
+     $userId=Session::get('user')['id']; 
      return Cart::where('user_id',$userId)->count();
     }
 }
