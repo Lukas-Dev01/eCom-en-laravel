@@ -32,5 +32,7 @@ Route::get("/detail/{id}", [ProductController::class,'detail']);
 
 Route::post("/add_to_cart",[ProductController::class,'addToCart']); // Add to Cart web route
 
+Route::get("/cartlist",[ProductController::class,'cartlist']);
+
 
 

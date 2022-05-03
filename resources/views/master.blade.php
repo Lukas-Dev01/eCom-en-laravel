@@ -26,7 +26,7 @@
 </body>
 
 <style>
-    
+
     .custom-login {
         height: 500px;
         padding-top: 100px;
@@ -59,6 +59,12 @@
 
     .detail-img {
         height: 200px;
+    }
+
+    .cart-list-divider {
+        border-bottom: 1px solid #cccccc;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
     }
 
 </style>
