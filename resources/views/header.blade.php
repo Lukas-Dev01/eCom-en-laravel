@@ -17,7 +17,7 @@ if(Session::has('user'))
           <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Orders</a>
+          <a class="nav-link" href="/myorders">Orders</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">

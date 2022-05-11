@@ -40,3 +40,5 @@ Route::get("ordernow",[ProductController::class,'OrderNow']);
 
 Route::post("orderplace",[ProductController::class,'orderPlace']);
 
+Route::get("myorders",[ProductController::class,'myOrders']); // Orders list path
+
