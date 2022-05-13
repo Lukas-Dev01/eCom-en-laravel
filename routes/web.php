@@ -42,3 +42,8 @@ Route::post("orderplace",[ProductController::class,'orderPlace']);
 
 Route::get("myorders",[ProductController::class,'myOrders']); // Orders list path
 
+Route::view('/register','Register'); // Register web path
+
+Route::post("/register", [UserController::class,'register']);  // Login page #2
+
+
