@@ -22,19 +22,22 @@
 {{View::make('header')}}
     @yield('content')
 {{View::make('footer')}}
-
 </body>
 
 <style>
+    a {
+        padding: 1em 1.5em;
+        text-decoration: none;
+    }
 
     .custom-login {
         height: 500px;
         padding-top: 100px;
     }
     
-        img.slider-img {
-            height: 100px !important
-        }
+    img.slider-img {
+        height: 100px !important
+    }
 
     .custom-product {
         height: 600px;
@@ -67,5 +70,29 @@
         padding-bottom: 20px;
     }
 
+    /* Large desktops and laptops */
+        @media (min-width: 1200px) {
+
+    }
+
+    /* Landscape tablets and medium desktops */
+        @media (min-width: 992px) and (max-width: 1199px) {
+
+    }
+
+    /* Portrait tablets and small desktops */
+        @media (min-width: 768px) and (max-width: 991px) {
+
+    }
+
+    /* Landscape phones and portrait tablets */
+        @media (max-width: 767px) {
+
+    }   
+
+    /* Portrait phones and smaller */
+        @media (max-width: 480px) {
+
+    }
 </style>
 </html>
