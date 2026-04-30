@@ -1,23 +1,25 @@
 # eCom Laravel Project
 
-A Laravel-based e-commerce application originally created during my vocational studies.  
-Currently being modernized to reflect improved backend structure, cleaner code, and better practices.
+A Laravel-based e-commerce application originally created during my vocational studies.
 
-## Features
-- Product management (CRUD)
-- Basic e-commerce functionality
-- MySQL database integration
+## Project Status
+
+This is the original version of the project.
+
+A modernized version is being developed in the `modernization` branch.
+
+## Modernization Branch
+
+The `modernization` branch focuses on:
+- Code cleanup and restructuring
+- Improved validation and logic handling
+- UI improvements
+- Better Laravel project organization
 
 ## Tech Stack
 - PHP (Laravel)
 - MySQL
 - Blade / HTML / CSS
-
-## Project Status
-This project is currently being refactored and improved:
-- Code cleanup and restructuring
-- Improved validation and logic handling
-- UI improvements
 
 ## Setup
 1. Clone repo
