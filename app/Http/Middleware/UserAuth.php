@@ -20,6 +20,19 @@ class UserAuth
         {
             return redirect('/');
         }
+
+        $protectedRoutes = [
+            'cartlist',
+            'ordernow',
+            'orderplace',
+            'myorders',
+        ];
+
+        if(in_array($request->path(), $protectedRoutes) && !$request->session()->has('user'))
+        {
+            return redirect('/login');
+        }
+
         return $next($request);
     }
 }

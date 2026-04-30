@@ -164,9 +164,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'anil sidhu', 'anil@sidhu.com', '$2y$10$QUMGfxBOwaatqoG5pHrJjOWSUH5oO.0pT/kIOM0Ws5VB3fYTSkZfO', NULL, NULL),
-(2, 'Lukas Yes', 'LukasYes@hotmail.com', '$2y$10$5G6iQKFST48M5WNN7jusX.Ei5tsxZahXTxozpCu0X1RLu3AIEbGkq', NULL, NULL),
-(4, 'Samiras', 'Samiras123@gmail.com', '$2y$10$UG3eXTHXhonDInd/JnREqO8v16RIjpz948EShkDutVnf3xFJ8KXlK', '2022-05-13 09:49:43', '2022-05-13 09:49:43');
+(1, 'John Smith', 'john.smith@example.com', '$2y$10$9R.YL7exbExqPah7R7D2Ye2wTYesyFuiFmf1Uep/rsRjEwpNLvz02', NULL, NULL),
+(2, 'Emily Johnson', 'emily.johnson@example.com', '$2y$10$UZ.SVOMRvOC5vOQK13fw5e5jr4dqJcz1AOlyXx6tU7Wj7Dj4WFGwe', NULL, NULL),
+(4, 'Michael Brown', 'michael.brown@example.com', '$2y$10$/l1Z2hOP20tUUX/IzSw4Fe6BPw.TpYVtJLjxUQEl0/cJYdur1svz2', '2022-05-13 09:49:43', '2022-05-13 09:49:43');
 
 --
 -- Indexes for dumped tables

@@ -28,6 +28,7 @@ class ProductController extends Controller
     {
         $data= Product::
         where('name', 'like', '%'.$req->input('query').'%')
+        ->orWhere('category', 'like', '%'.$req->input('query').'%')
         ->get();
         return view('search',['products'=>$data]);
     }
