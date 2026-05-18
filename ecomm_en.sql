@@ -47,6 +47,20 @@ INSERT INTO `cart` (`id`, `product_id`, `user_id`, `created_at`, `updated_at`) V
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -66,7 +80,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2022_04_03_165539_create_products_table', 2),
 (4, '2022_04_19_112958_create_cart_table', 3),
 (5, '2022_04_26_123849_create_sessions_table', 4),
-(6, '2022_05_09_170217_create_orders_table', 5);
+(6, '2022_05_09_170217_create_orders_table', 5),
+(7, '2026_05_02_000000_create_wishlist_table', 6);
 
 -- --------------------------------------------------------
 
@@ -138,11 +153,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `category`, `description`, `gallery`, `created_at`, `updated_at`) VALUES
-(256, 'LG mobile', '200', 'mobile', 'A smartphone with 4gb ram and much more feature', 'https://www.lg.com/us/images/cell-phones/md07522101/gallery/desktop-01.jpg', NULL, NULL),
-(257, 'Oppo mobile', '300', 'mobile', 'A smartphone with 8gb ram and much more feature', 'https://assetscdn1.paytm.com/images/catalog/product/M/MO/MOBOPPO-A52-6-GFUTU6297453D3D253C/1592019058170_0..png', NULL, NULL),
-(258, 'Panasonic Tv', '400', 'tv', 'A smart tv with much more feature', 'https://i.gadgets360cdn.com/products/televisions/large/1548154685_832_panasonic_32-inch-lcd-full-hd-tv-th-l32u20.jpg', NULL, NULL),
-(259, 'Soni Tv', '500', 'tv', 'A tv with much more feature', 'https://4.imimg.com/data4/PM/KH/MY-34794816/lcd-500x500.png', NULL, NULL),
-(260, 'LG fridge', '200', 'fridge', 'A fridge with much more feature', 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTFx-2-wTOcfr5at01ojZWduXEm5cZ-sRYPJA&usqp=CAU', NULL, NULL);
+(256, 'LG Velvet 5G', '200', 'mobile', 'A compact LG smartphone with a crisp display, 4GB RAM, and dependable everyday cameras.', 'https://www.lg.com/us/images/cell-phones/md07522101/gallery/desktop-01.jpg', NULL, NULL),
+(257, 'Oppo A52', '300', 'mobile', 'A slim Oppo phone with smooth performance, generous memory, and a bright full-screen display.', 'https://cdn.tgdd.vn/Products/Images/42/220649/oppo-a52-den-1-org.jpg', NULL, NULL),
+(258, 'Panasonic 32 inch LED TV', '400', 'tv', 'A Panasonic flat-screen TV with clean picture quality, simple controls, and living-room ready styling.', 'https://i.gadgets360cdn.com/products/televisions/large/1548154685_832_panasonic_32-inch-lcd-full-hd-tv-th-l32u20.jpg', NULL, NULL),
+(259, 'Soni Tv', '500', 'tv', 'A Sony-style Bravia TV with sharp 4K visuals, smart streaming, and a slim modern stand.', 'https://sony.scene7.com/is/image/sonyglobalsolutions/TVFY24_Category_4KTV_Primary_image', NULL, NULL),
+(260, 'LG fridge', '200', 'fridge', 'A stainless LG refrigerator with roomy storage, quiet cooling, and a polished kitchen-ready finish.', 'https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/244b5165-5a87-4c84-9c7a-da42b288908d/Refrigerator_LRMVC2306D_gallery_01_5000x5000', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -177,6 +192,13 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_a
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `wishlist_product_id_user_id_unique` (`product_id`,`user_id`);
 
 --
 -- Indexes for table `migrations`
@@ -222,10 +244,16 @@ ALTER TABLE `cart`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
+-- AUTO_INCREMENT for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orders`
