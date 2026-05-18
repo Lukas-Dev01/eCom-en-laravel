@@ -1,0 +1,29 @@
+Reminder: order status feature
+
+Order status is changed manually in the database for simulation of satus values.
+
+Valid status values for the orders.status column:
+
+- pending
+- processing
+- shipped
+- delivered
+- cancelled
+
+Use lowercase values to be safest. For example:
+
+delivered
+
+instead of:
+
+Delivered
+
+Current flow:
+
+1. Customer places an order.
+2. Order is saved as pending.
+3. Manually edit orders.status in the database.
+4. User refreshes /myorders.
+5. Status updates on the page.
+
+This is the simple version: no admin panel yet, just visible order statuses.

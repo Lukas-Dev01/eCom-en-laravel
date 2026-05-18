@@ -14,4 +14,11 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
+    ])
+    .postCss('resources/css/welcome.css', 'public/css', [
+        //
     ]);
+
+mix.override(config => {
+    config.plugins = config.plugins.filter(plugin => plugin.constructor.name !== 'WebpackBarPlugin');
+});

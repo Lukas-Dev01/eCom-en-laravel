@@ -1,14 +1,78 @@
-/node_modules
+# Dependencies
+/vendor/
+/node_modules/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+/auth.json
+/storage/*.key
+
+# Laravel runtime files
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+/storage/app/public/*
+!/storage/app/public/.gitignore
+/storage/debugbar/
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+/storage/framework/cache/data/*
+!/storage/framework/cache/data/.gitignore
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/testing/*
+!/storage/framework/testing/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/storage/logs/*
+!/storage/logs/.gitignore
+
+# Public symlinks and local server/build markers
 /public/hot
 /public/storage
-/storage/*.key
-/vendor
-.env
-.env.backup
+
+# Compiled frontend assets
+# Source files live in resources/css and resources/js.
+/public/build/
+/public/css/
+/public/js/
+/public/mix-manifest.json
+/.vite/
+/.webpack/
+
+# Tests and coverage
 .phpunit.result.cache
+/coverage/
+/.coverage
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local database files
+# Demo SQL dumps are intentionally allowed for this project.
+*.sqlite
+*.sqlite3
+*.db
+database/*.sqlite
+database/*.sqlite3
+
+# Local development tools
 Homestead.json
 Homestead.yaml
-npm-debug.log
-yarn-error.log
-/.idea
-/.vscode
+/.idea/
+/.vscode/
+/.fleet/
+.phpactor.json
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
