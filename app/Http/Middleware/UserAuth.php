@@ -22,7 +22,6 @@ class UserAuth
         }
 
         $protectedRoutes = [
-            'cartlist',
             'ordernow',
             'orderplace',
             'myorders',

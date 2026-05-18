@@ -1,49 +1,28 @@
 @extends('master')
 @section('content')
-@php
-  $featuredProduct = $products->first();
-@endphp
-
-<main class="home-page modern-storefront">
-  <section class="store-hero">
-    <div class="store-hero-copy">
-      <h1>Clean tech shopping for everyday essentials.</h1>
-      <p>Browse a wider collection of everyday tech with quick access to wishlist, cart, and checkout.</p>
-      <div class="store-hero-actions">
-        <a class="btn store-secondary-action" href="/search">Browse categories</a>
-      </div>
-    </div>
-
-    @if($featuredProduct)
-    <a class="store-feature-card" href="/detail/{{$featuredProduct['id']}}?back={{ urlencode(request()->fullUrl()) }}">
-      <span class="featured-label">Featured</span>
-      <div class="store-feature-image">
-        <img src="{{ \App\Models\Product::imageUrl($featuredProduct['gallery']) }}" alt="{{$featuredProduct['name']}}">
-      </div>
-      <div class="store-feature-meta">
-        <span>{{$featuredProduct['category']}}</span>
-        <strong>{{$featuredProduct['name']}}</strong>
-        <em>${{$featuredProduct['price']}}</em>
-      </div>
-    </a>
-    @endif
+<main class="collection-page">
+  <section class="collection-hero">
+    <span class="home-kicker">{{ $pageKicker }}</span>
+    <h1>{{ $pageTitle }}</h1>
+    <p>{{ $pageSubtitle }}</p>
   </section>
 
-  <section class="products-section store-products" id="featured-products">
-    <div class="section-heading">
-      <div>
-        <h2>Featured Products</h2>
-      </div>
-      <a class="section-link" href="/search">Browse all products</a>
-    </div>
-
+  <section class="products-section collection-products">
     @if(count($products) > 0)
     <div class="product-grid store-product-grid">
       @foreach($products as $item)
       @php
         $isWishlisted = in_array($item['id'], $wishlistedProducts ?? []);
+        $discountPercent = (int) ($item['deal_discount_percent'] ?? 0);
+        $dealPrice = (float) ($item['unit_price'] ?? $item['price']);
       @endphp
       <article class="product-card store-product-card">
+        @if(($pageMode ?? '') === 'deals' && $discountPercent > 0)
+        <span class="product-badge">{{$discountPercent}}% off</span>
+        @elseif(($pageMode ?? '') === 'new')
+        <span class="product-badge product-badge-soft">New</span>
+        @endif
+
         <div class="product-card-actions">
           <form action="{{ $isWishlisted ? '/remove_from_wishlist' : '/add_to_wishlist' }}" method="POST" data-ajax-wishlist data-add-url="/add_to_wishlist" data-remove-url="/remove_from_wishlist">
             @csrf
@@ -65,7 +44,14 @@
         </a>
 
         <div class="product-card-footer">
-          <strong>${{$item['price']}}</strong>
+          <strong>
+            @if(($pageMode ?? '') === 'deals')
+            <span class="price-old">${{number_format((float) $item['price'], 0)}}</span>
+            <span class="price-deal">${{number_format($dealPrice, 0)}}</span>
+            @else
+            ${{$item['price']}}
+            @endif
+          </strong>
           <form action="/add_to_cart" method="POST" data-ajax-cart>
             @csrf
             <input type="hidden" name="product_id" value="{{$item['id']}}">
@@ -77,8 +63,8 @@
     </div>
     @else
     <div class="empty-state">
-      <h4>No products available</h4>
-      <p>Add products to your catalog to fill the storefront.</p>
+      <h4>No products found</h4>
+      <p>There are no products to show here yet.</p>
     </div>
     @endif
   </section>
