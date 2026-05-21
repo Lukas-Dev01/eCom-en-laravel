@@ -31,6 +31,7 @@ class ProductController extends Controller
         'JBL Flip 6 Speaker',
         'Meta Quest 3 Headset',
     ];
+    private const HERO_PRODUCT = 'OnePlus Nord 4';
     private const FEATURED_PRODUCTS = [
         'Samsung 55 inch Crystal UHD TV',
         'LG OLED C4 48 inch TV',
@@ -58,6 +59,7 @@ class ProductController extends Controller
     function index()
     {
         $featuredNames = self::FEATURED_PRODUCTS;
+        $heroProduct = Product::where('name', self::HERO_PRODUCT)->first();
         $productsByName = Product::whereIn('name', $featuredNames)->get()->keyBy('name');
 
         $data=collect($featuredNames)->map(function ($name) use ($productsByName) {
@@ -68,7 +70,12 @@ class ProductController extends Controller
             $data = Product::latest()->limit(8)->get();
         }
 
+        if(!$heroProduct) {
+            $heroProduct = $data->first();
+        }
+
        return view('product',[
+        'featuredProduct'=>$heroProduct,
         'products'=>$data,
         'wishlistedProducts'=>$this->wishlistedProductIds(),
        ]);

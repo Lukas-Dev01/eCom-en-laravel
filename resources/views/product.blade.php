@@ -1,9 +1,5 @@
 @extends('master')
 @section('content')
-@php
-  $featuredProduct = $products->first();
-@endphp
-
 <main class="home-page modern-storefront">
   <section class="store-hero">
     <div class="store-hero-copy">
@@ -23,7 +19,6 @@
       <div class="store-feature-meta">
         <span>{{$featuredProduct['category']}}</span>
         <strong>{{$featuredProduct['name']}}</strong>
-        <em>${{$featuredProduct['price']}}</em>
       </div>
     </a>
     @endif

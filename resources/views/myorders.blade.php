@@ -36,7 +36,6 @@
   <div class="orders-page">
     <div class="cart-header">
       <div>
-        <span class="product-category">Orders</span>
         <h3>My orders</h3>
         <p class="orders-intro">Track active orders and keep cancelled orders separate from the current queue.</p>
       </div>

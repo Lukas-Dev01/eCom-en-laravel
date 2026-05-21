@@ -45,7 +45,9 @@
             </form>
           </div>
           <a href="/detail/{{$item['id']}}?back={{ urlencode(request()->fullUrl()) }}">
-            <img class="trending-image" src="{{ \App\Models\Product::imageUrl($item['gallery']) }}" alt="{{$item['name']}}">
+            <div class="product-image-wrap">
+              <img class="trending-image" src="{{ \App\Models\Product::imageUrl($item['gallery']) }}" alt="{{$item['name']}}">
+            </div>
             <h4>{{$item['name']}}</h4>
             <p>{{$item['description']}}</p>
             <strong>

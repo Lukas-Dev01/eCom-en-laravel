@@ -2526,9 +2526,13 @@ a {
     }
 
     .product-image-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         aspect-ratio: 1 / 0.82;
         margin-bottom: 1rem;
+        overflow: hidden;
     }
 
     .product-card .trending-image {
@@ -2572,9 +2576,30 @@ a {
     }
 
     .product-card-footer strong {
-        color: #111827;
+        color: #0f6b45;
         font-size: 1.15rem;
         font-weight: 900;
+    }
+
+    .product-card > a strong {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.3rem;
+        margin-top: auto;
+        color: #0f6b45;
+        font-size: 1.15rem;
+        font-weight: 900;
+        line-height: 1.2;
+    }
+
+    .product-card > a strong .price-old {
+        color: #8c9690;
+        font-size: 0.9rem;
+        font-weight: 800;
+    }
+
+    .product-card > a strong .price-deal {
+        color: #0f6b45;
     }
 
     .product-card-footer .btn {
